@@ -77,14 +77,7 @@ namespace Kurs
                 }
                 else if (programmsProb.Key == Constants.ServersCount)
                 {
-                    double probabilityAllServersBusy = 0;
-                    stats.ProgrammsCountProbability.ToList().ForEach(pair =>
-                    {
-                        if (pair.Key >= programmsProb.Key)
-                            probabilityAllServersBusy += pair.Value;
-                    });
-
-                    output += $"{probabilityAllServersBusy} - вероятность того, что загружено:  {Constants.ServersCount} \\ {Constants.ServersCount} серверов" + Environment.NewLine;
+                    output += $"{programmsProb.Value} - вероятность того, что загружено:  {Constants.ServersCount} \\ {Constants.ServersCount} серверов. Буфер свободен" + Environment.NewLine;
                 }
                 else if (programmsProb.Key > Constants.ServersCount)
                 {
